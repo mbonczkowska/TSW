@@ -1,22 +1,21 @@
 @wh: 50px;
 
-.obiekty(@kolor: #6b3b31){
+    .obiekty(@kolor: #6b3b31){
             display: block;
             width: @wh;
             height: @wh;
             background: @kolor;
             float: left;
-}
+    }
 
-   body {
+    body {
             background: #fcfcfc;
     }
 
     .player {
             position: absolute;
             left: @wh;
-			top: @wh;
-            
+	    top: @wh;
             z-index: 100;
             background: url(postac.jpg);
             display: block;
@@ -28,7 +27,7 @@
             position: relative;
             z-index: 0;
             border: 1px solid black;
-			background: url(mapa.jpg);
+	    background: url(mapa.jpg);
             display: block;
             overflow: auto
     }
@@ -41,7 +40,7 @@
             .obiekty(#808080);
     }
 	
-	.door {
+    .door {
             .obiekty(#280000);
     }
 
@@ -49,12 +48,12 @@
             clear: left;
     }
 	
-	#randomnumber {
-			width: 20px;
-			height: 20px;
-			border-top-style:dotted;
-			border-bottom-style:dotted;
-			border-left-style:dotted;
-			border-right-style:dotted;
-	}
+    #randomnumber {
+	    width: 20px;
+	    height: 20px;
+	    border-top-style:dotted;
+	    border-bottom-style:dotted;
+	    border-left-style:dotted;
+	    border-right-style:dotted;
+    }
 
