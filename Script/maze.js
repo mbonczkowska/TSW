@@ -308,8 +308,35 @@
 				
 				var w420 = $("#420").position();
 				var w422 = $("#422").position();				
-				var w433 = $("#433").position();
+				var w433 = $("#433").position();				
 				var w435 = $("#435").position();
+				
+				var w443 = $("#443").position();
+				var w444 = $("#444").position();
+				var w445 = $("#445").position();
+				
+				var w446 = $("#446").position();
+				var w448 = $("#448").position();
+				var w449 = $("#449").position();
+				var w450 = $("#450").position();
+				var w451 = $("#451").position();
+				var w452 = $("#452").position();
+				var w453 = $("#453").position();
+				var w454 = $("#454").position();
+				var w455 = $("#455").position();
+				var w456 = $("#456").position();
+				var w457 = $("#457").position();
+				var w458 = $("#458").position();
+				
+				
+				
+				var w459 = $("#459").position();
+				var w461 = $("#461").position();
+				var w462 = $("#462").position();
+				var w463 = $("#463").position();
+				var w464 = $("#464").position();
+				var w465 = $("#465").position();
+				var w466 = $("#466").position();
 				
 			
 				//var w228 = $("#228").position();
@@ -456,12 +483,12 @@
 									 if(position.top === w409.top && position.left < w409.left + 50  
 									 && w409.left - 50 < position.left)						   
 									 position.left = w409.left+50;
-									 if(position.top === w422.top && position.left < w422.left + 50  
-									 && w422.left - 50 < position.left)						   
-									 position.left = w422.left+50;
-									 if(position.top === w435.top && position.left < w435.left + 50  
-									 && w435.left - 50 < position.left)						   
-									 position.left = w435.left+50;
+									 if(position.top === w448.top && position.left < w448.left + 50  
+									 && w448.left - 50 < position.left)						   
+									 position.left = w448.left+50;
+									 if(position.top === w461.top && position.left < w461.left + 50  
+									 && w461.left - 50 < position.left)						   
+									 position.left = w461.left+50;
 
 
 
@@ -597,7 +624,9 @@
 									 if(position.left === w407.left && position.top < w407.top + 50  
 									 && w407.top - 50 < position.top)						   
 									 position.top = w407.top+50;
-									 
+									 if(position.left === w453.left && position.top < w453.top + 50  
+									 && w453.top - 50 < position.top)						   
+									 alert("nie przejdziesz");
 									 
                                    
                                     $(".player").animate({'top': position.top - 50 +'px'},'fast');
@@ -736,14 +765,14 @@
 									 if(position.top === w407.top && position.left > w407.left - 50  
 									 && w407.left + 50 > position.left)						   
 									 position.left = w407.left-50;
-									 
-									 if(position.top === w420.top && position.left > w420.left - 50  
-									 && w420.left + 50 > position.left)						   
-									 position.left = w420.left-50;
-									 if(position.top === w433.top && position.left > w433.left - 50  
-									 && w433.left + 50 > position.left)						   
-									 position.left = w433.left-50;
-			
+									 							
+									 if(position.top === w459.top && position.left > w459.left - 50  
+									 && w459.left + 50 > position.left)						   
+									 position.left = w459.left-50;
+									
+									 if(position.top === w446.top && position.left > w446.left - 50  
+									 && w446.left + 50 > position.left)						   
+									 position.left = w446.left-50;
 									
 									
 									
@@ -751,8 +780,8 @@
                                     break;
                             case 83:
                           
-									if (position.top > 800) {        
-										position.top = 800;
+									if (position.top > 850) {        
+										position.top = 850;
 									}
 									
 									 if(position.left === w84.left && position.top > w84.top - 50  
@@ -892,6 +921,95 @@
 									 && w358.top + 50 > position.top)						   
 									 position.top = w358.top-50;
 									 
+									 if(position.left === w443.left && position.top > w443.top - 50  
+									 && w443.top + 50 > position.top)
+									 position.top = w443.top-50;
+									 
+									 if(position.left === w444.left && position.top > w444.top - 50  
+									 && w444.top + 50 > position.top)
+									 position.top = w444.top-50;
+									 
+									 if(position.left === w445.left && position.top > w445.top - 50  
+									 && w445.top + 50 > position.top)
+									 position.top = w445.top-50;
+									 
+									 if(position.left === w446.left && position.top > w446.top - 50  
+									 && w446.top + 50 > position.top)
+									 position.top = w446.top-50
+									 
+									 if(position.left === w448.left && position.top > w448.top - 50  
+									 && w448.top + 50 > position.top)
+									 position.top = w448.top-50;
+									 
+									 if(position.left === w449.left && position.top > w449.top - 50  
+									 && w449.top + 50 > position.top)
+									 position.top = w449.top-50;
+									 
+									 if(position.left === w450.left && position.top > w450.top - 50  
+									 && w450.top + 50 > position.top)
+									 position.top = w450.top-50;
+									 
+									 if(position.left === w451.left && position.top > w451.top - 50  
+									 && w451.top + 50 > position.top)
+									 position.top = w451.top-50;
+									 
+									 if(position.left === w452.left && position.top > w452.top - 50  
+									 && w452.top + 50 > position.top)
+									 position.top = w452.top-50;
+									 
+									 if(position.left === w455.left && position.top > w455.top - 50  
+									 && w455.top + 50 > position.top)
+									 position.top = w455.top-50;
+									 
+									  if(position.left === w456.left && position.top > w456.top - 50  
+									 && w456.top + 50 > position.top)
+									 position.top = w456.top-50;
+									 
+									  if(position.left === w457.left && position.top > w457.top - 50  
+									 && w457.top + 50 > position.top)
+									 position.top = w457.top-50;
+									 
+									  if(position.left === w458.left && position.top > w458.top - 50  
+									 && w458.top + 50 > position.top)
+									 position.top = w458.top-50;
+									 
+									 if(position.left === w459.left && position.top > w459.top - 50  
+									 && w459.top + 50 > position.top)
+									 position.top = w459.top-50;
+									 
+									 if(position.left === w461.left && position.top > w461.top - 50  
+									 && w461.top + 50 > position.top)
+									 position.top = w461.top-50;
+									 
+									 if(position.left === w462.left && position.top > w462.top - 50  
+									 && w462.top + 50 > position.top)
+									 position.top = w462.top-50;
+									 
+									 if(position.left === w463.left && position.top > w463.top - 50  
+									 && w463.top + 50 > position.top)
+									 position.top = w463.top-50;
+									 
+									 if(position.left === w464.left && position.top > w464.top - 50  
+									 && w464.top + 50 > position.top)
+									 position.top = w464.top-50;
+									 
+									 if(position.left === w465.left && position.top > w465.top - 50  
+									 && w465.top + 50 > position.top)
+									 position.top = w465.top-50;
+									 
+									 if(position.left === w466.left && position.top > w466.top - 50  
+									 && w466.top + 50 > position.top)
+									 position.top = w466.top-50;
+									 
+									 if(position.left === w453.left && position.top > w453.top - 50  
+									 && w453.top + 50 > position.top)						   
+									 alert("nie przejdziesz");
+								
+									 if(position.left === w358.left && position.top > w358.top - 50  
+									 && w358.top + 50 > position.top)						   
+									 position.top = w358.top-50;
+									 
+									
 									 
 									$(".player").animate({'top': position.top + 50 +'px'},'fast');
                                     break;

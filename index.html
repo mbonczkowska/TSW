@@ -10,11 +10,21 @@
     <script src="Script/random.js"></script>
     <script src="Script/gracze.js"></script>
     <link rel="stylesheet/less" type="text/css" href="maze5.less">
+	  <link rel="stylesheet/less" type="text/css" href="Less/panel.less">
     <script src="Less/less.js" type="text/javascript"></script>
    <!-- <link rel="stylesheet/less" type="text/css" href="maze.less">
     <script src="less.js" type="text/javascript"></script> -->
+	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
     <style>
-		
+		#feedback { font-size: 1em; }
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 90%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1em; height: 120px; float:left;}
+
 		</style>
     <script>
         function begin() {
@@ -120,14 +130,90 @@ else {
    cd=setTimeout('timer()',1000);
 }
 	</script>
+	<script>
+$(function() {
+/*$( "#selectable" ).selectable({
+stop: function() {
+var result = $( "#select-result" ).empty();
+$( ".ui-selected", this ).each(function() {
+var index = $( "#selectable li" ).index( this );
+result.append( " #" + ( index + 1 ) );
+});
+}
+});*/
+});
+
+$(".player").filter(".1").click(function() {
+	$(this).addClass('highlighted');
+	//wybor = patty;
 	
+	window.location = "index.html";
+
+});
+</script>
+<script>
+	$(document).ready(function() { 
+					$(document).on('click', 'input:radio[value=player]:checked', function() { 
+						$( "#selectable" ).selectable({
+						stop: function() {
+						var result = $( "#select-result" ).empty();
+						$( ".ui-selected", this ).each(function() {
+						var index = $( "#selectable li" ).index( this );
+						result.append( " #" + ( index + 1 ) );
+								});
+							}
+						});
+						 $("#selectable" ).fadeIn();
+						 $("#potw" ).hide();
+						 $("#selectable").append('<br><br><br><br><br><br>');
+					})
+					
+					$(document).on('click', 'input:radio[value=fritened]:checked', function() { 
+						var result = $( "#select-result" ).empty();
+						result.append("frighten");
+						 $( "#selectable" ).hide();
+						
+						 $( "#potw" ).fadeIn();
+					})
+				});
+	function zatwierdz(){
+	
+		$( "#select-result" ).fadeIn();
+		$( "#pf").hide();
+		$( "#selectable").hide();
+		$( "#ok").hide();
+	};
+
+</script>	
 </head>
 <body>
+
 	<script>
         var speed = 250, i = 0, timerid;
 
     </script>
-	
+	<p id="feedback">
+
+</p>
+<form action="" id="pf">
+<input type="radio" id="player" name="choose" value="player">Player<br>
+<input type="radio" id="fritend" name="choose" value="fritened">Fritened
+</form>
+
+<ol id="selectable" style="display:none">
+<li class="ui-widget-content 1">Item 1</li>
+<li class="ui-widget-content 2">Item 2</li>
+<li class="ui-widget-content 3">Item 3</li>
+<li class="ui-widget-content 4">Item 4</li>
+<li class="ui-widget-content 5">Item 5</li>
+</ol>
+<br><br>
+<input id="ok" type="submit" value="OK" onclick="zatwierdz()" />
+<br><br>
+<span>You've selected:</span> <span style="display:none" id="select-result">none</span>
+<br><br>
+
+
 	<div id="tura" style="float:left">gracz</div>
     <div id="time">00:20</div>
 <br><br>
