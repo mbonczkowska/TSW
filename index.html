@@ -17,7 +17,7 @@
 	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css" />
+
     <style>
 		#feedback { font-size: 1em; }
 #selectable .ui-selecting { background: #FECA40; }
@@ -46,9 +46,18 @@
     </script>
     
     <script>
-        $(function () {
-            $("#draggable5").draggable({ grid: [50, 50], snap: "#map" });
-            $("#draggable4").draggable({ grid: [50, 50], snap: "#map" });
+          $(function () {			
+            $("#potwor1").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor2").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor3").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor4").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor5").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor6").draggable({ grid: [50, 50], snap: "#map" });
+			$("#potwor7").draggable({ grid: [50, 50], snap: "#map" });
+			   
+            $("#zywiol1").draggable({ grid: [50, 50], snap: "#map" });
+			$("#zywiol2").draggable({ grid: [50, 50], snap: "#map" });
+			$("#zywiol3").draggable({ grid: [50, 50], snap: "#map" });
         });
     </script>
     <script>
@@ -62,8 +71,7 @@
 			
     </script>
 	<script>
-		
-
+	
     function randomPlace(what){
         pa= document.getElementById("map"); 
 		
@@ -80,7 +88,6 @@
         }
         if(!who) arguments.callee(what);
     }
-
 
 	</script>
 	<script>
@@ -105,7 +112,7 @@ if(m==-1) {
 if(m<10) {
    mins='00';
    if(m%2===0){
-		tura = "player";
+		tura = "gamer";
 		//$("#potw").toggle("highlight");
    }
    else {
@@ -153,13 +160,14 @@ $(".player").filter(".1").click(function() {
 </script>
 <script>
 	$(document).ready(function() { 
-					$(document).on('click', 'input:radio[value=player]:checked', function() { 
+					$(document).on('click', 'input:radio[value=gamer]:checked', function() { 
 						$( "#selectable" ).selectable({
 						stop: function() {
 						var result = $( "#select-result" ).empty();
 						$( ".ui-selected", this ).each(function() {
 						var index = $( "#selectable li" ).index( this );
 						result.append( " #" + ( index + 1 ) );
+						$(".wybrany").append("<div id=\"osoba\" value="+(index + 1)+"></div>");
 								});
 							}
 						});
@@ -178,13 +186,55 @@ $(".player").filter(".1").click(function() {
 				});
 	function zatwierdz(){
 	
-		$( "#select-result" ).fadeIn();
-		$( "#pf").hide();
-		$( "#selectable").hide();
-		$( "#ok").hide();
+		$("#select-result").fadeIn();
+		$("#pf").hide();
+		$("#selectable").hide();
+		$("#ok").hide();
+		$("#play").fadeIn();
+		
 	};
 
 </script>	
+<script>
+$(document).ready(function() {
+    $(".draggable").hide();
+	$(".draggable2").hide();
+
+    var elements = $(".draggable");
+	
+    var elementCount = elements.size();
+    var elementsToShow = 1;
+    var alreadyChoosen = ",";
+    var i = 0;
+	
+	
+	
+    while (i < elementsToShow) {
+        var rand = Math.floor(Math.random() * elementCount);
+        if (alreadyChoosen.indexOf("," + rand + ",") < 0) {
+            alreadyChoosen += rand + ",";
+            elements.eq(rand).show();
+            ++i;
+        }
+    }
+	
+	var elements2 = $(".draggable2");
+	var elementCount2 = elements2.size();
+    var elementsToShow2 = 1;
+    var alreadyChoosen2 = ",";
+    var i2 = 0;
+	
+	while (i2 < elementsToShow2) {
+        var rand2 = Math.floor(Math.random() * elementCount2);
+        if (alreadyChoosen2.indexOf("," + rand2 + ",") < 0) {
+            alreadyChoosen2 += rand2 + ",";
+            elements2.eq(rand2).show();
+            ++i2;
+        }
+    }
+});
+
+</script>
 </head>
 <body>
 
@@ -196,7 +246,7 @@ $(".player").filter(".1").click(function() {
 
 </p>
 <form action="" id="pf">
-<input type="radio" id="player" name="choose" value="player">Player<br>
+<input type="radio" id="gamer" name="choose" value="gamer">Gamer<br>
 <input type="radio" id="fritend" name="choose" value="fritened">Fritened
 </form>
 
@@ -217,7 +267,7 @@ $(".player").filter(".1").click(function() {
 	<div id="tura" style="float:left">gracz</div>
     <div id="time">00:20</div>
 <br><br>
-    <div id="map"">
+    <div id="map">
     </div>
 	
 	
@@ -230,15 +280,19 @@ $(".player").filter(".1").click(function() {
     </div>
     <div class="wybrany">
     </div>
-	<div id="potw">
-    <div id="draggable5" class="draggable ui-widget-content">
-        <p>
-            Potwór</p>
-    </div>
-    <div id="draggable4" class="draggable2 ui-widget-content2">
-        <p>
-            ¯ywio³</p>
-    </div>
+	<div id="potw"  style="display: none">
+    <div id="potwor1" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor1.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor2" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor2.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor3" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor3.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor4" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor4.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor5" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor5.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor6" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor6.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	<div id="potwor7" class="draggable ui-widget-content" style="background: #ffffff url(postaci/potwor7.bmp)  50% 50% repeat-x;"><p>Potwór</p></div>
+	
+
+    <div id="zywiol1" class="draggable2 ui-widget-content2" style="background: #ffffff url(postaci/zywiol1.png)  50% 50% repeat-x;"><p>¯ywio³</p></div>
+	<div id="zywiol2" class="draggable2 ui-widget-content2" style="background: #ffffff url(postaci/zywiol2.png)  50% 50% repeat-x;"><p>¯ywio³</p></div>
+	<div id="zywiol3" class="draggable2 ui-widget-content2" style="background: #ffffff url(postaci/zywiol3.png)  50% 50% repeat-x;"><p>¯ywio³</p></div>
 	</div>
 	
 	<input type="button" value="Click" onclick="randomPlace(this)"></input>
